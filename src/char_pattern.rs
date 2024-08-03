@@ -1,6 +1,6 @@
 use std::cmp::min;
 use std::collections::HashMap;
-use rand::prelude::{SliceRandom, ThreadRng};
+use rand::prelude::{SliceRandom};
 use rand::Rng;
 use crate::char_pattern::digit::Digit;
 use crate::char_pattern::lowercase::Lowercase;

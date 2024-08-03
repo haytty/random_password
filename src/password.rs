@@ -11,6 +11,18 @@ impl Password {
     }
 }
 
+impl From<Vec<char>> for Password {
+    fn from(value: Vec<char>) -> Self {
+        Self::new(value.into_iter().collect())
+    }
+}
+
+impl From<String> for Password {
+    fn from(value: String) -> Self {
+        Self::new(value)
+    }
+}
+
 impl Display for Password {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         write!(f, "{}", self.value)
@@ -19,9 +31,9 @@ impl Display for Password {
 
 pub fn random_password(length: u8, uppercase: bool, lowercase: bool, symbol: bool, digit: bool) -> Password {
     let mut rng = rand::thread_rng();
-    let s: String = char_pattern::random_chars(
-        length, uppercase, lowercase, symbol, digit, &mut rng
-    ).iter().collect();
-   
-    Password::new(s)
+    let password: Password = char_pattern::random_chars(
+        length, uppercase, lowercase, symbol, digit, &mut rng,
+    ).into();
+
+    password
 }
