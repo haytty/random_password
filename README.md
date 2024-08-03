@@ -8,6 +8,7 @@ the use of uppercase, lowercase, symbols, digits, and the number of passwords to
 First, clone this repository and navigate into the directory:
 
 `git clone https://github.com/haytty/random_password.git`
+
 `cd random_password`
 
 Next, use Cargo to build the application:
