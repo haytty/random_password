@@ -121,7 +121,6 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
-    use rand::Rng;
     use std::collections::HashSet;
 
     #[test]
