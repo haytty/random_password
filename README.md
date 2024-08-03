@@ -12,7 +12,7 @@ First, clone this repository and navigate into the directory:
 
 Next, use Cargo to build the application:
 
-`cargo install .`
+`cargo install --path .`
 
 After the compilation process, the executable file will be located in the `target/release/` directory.
 
