@@ -58,11 +58,12 @@ where
     random_length_vec.shuffle(rng);
     random_length_vec.shuffle(rng);
 
-    let mut char_pattern_length_map: HashMap<CharPattern, Length> = HashMap::new();
-    for (&pattern, &length) in patterns.iter().zip(random_length_vec.iter()) {
-        char_pattern_length_map.insert(pattern, length);
-    }
-    char_pattern_length_map
+    let char_pattern_length_pairs: Vec<(_, _)> =
+        patterns.iter().zip(random_length_vec.iter()).map(|(&pattern, &length)| {
+            (pattern, length)
+        }).collect();
+
+    HashMap::from(char_pattern_length_pairs)
 }
 
 fn get_char_patterns(uppercase: bool, lowercase: bool, symbol: bool, digit: bool) -> Vec<CharPattern> {
